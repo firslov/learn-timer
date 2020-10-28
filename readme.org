@@ -1,0 +1,26 @@
+* Learn-timer
+  This is a countdown clock based on modeline.
+
+  [[file:src/example.png]]
+
+* Installation
+  - Install [[https://github.com/manateelazycat/awesome-tray][awesome-tray]]
+  - Clone this repo into your =.emacs.d=
+  #+BEGIN_SRC sh
+    git clone --depth=1 https://github.com/firslov/learn-timer.git
+  #+END_SRC
+  - Add the config below into your =init.el=
+  #+BEGIN_SRC emacs-lisp
+    (use-package learn-timer
+      :load-path "path/to/learn-timer/"
+      :after awesome-tray
+      :config
+      (add-to-list 'awesome-tray-active-modules "timer" 'append))
+  #+END_SRC
+* Usage
+  - You can see the countdown clock at the right of you modeline.
+  - =M-x timer= to run a countdown clock buffer.
+  - Set the variable =learn-time= to customize deadline.
+  [[file:src/example-buf.png]]
+  - Add the total number of TODOs, you can customize the agenda file with the variable =lt-todo-files=.
+  [[file:src/todo.png]]
